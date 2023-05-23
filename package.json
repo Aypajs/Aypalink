@@ -1,0 +1,49 @@
+{
+  "name": "aypalink",
+  "version": "0.0.1",
+  "description": "A stable and powerful Node.js Lavalink client.",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "tsc",
+    "lint": "eslint --ext .ts ./src",
+    "publish:stable": "yarn build && yarn publish --access=public",
+    "publish:beta": "yarn build && yarn publish --tag beta --access=public"
+  },
+  "keywords": [
+    "lavalink",
+    "discord",
+    "music",
+    "bot",
+    "discord.js",
+    "eris"
+  ],
+  "author": "Aypa (https://github.com/Aypajs)",
+  "contributors": [
+    "iAutistic <iautistic@proton.me>"
+  ],
+  "license": "Apache-2.0",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Aypajs/Aypalink.git"
+  },
+  "bugs": "https://github.com/Aypajs/Aypalink/issues",
+  "engines": {
+    "node": ">=16.0.0"
+  },
+  "homepage": "https://github.com/Aypajs/Aypalink",
+  "dependencies": {
+    "ws": "^8.13.0"
+  },
+  "devDependencies": {
+    "@types/node": "^20.2.3",
+    "@types/ws": "^8.5.4",
+    "@typescript-eslint/eslint-plugin": "^5.59.7",
+    "@typescript-eslint/parser": "^5.59.7",
+    "eslint": "^8.41.0",
+    "typescript": "^5.0.4"
+  }
+}

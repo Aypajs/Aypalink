@@ -1,0 +1,19 @@
+env:
+  es2021: true
+  node: true
+root: true
+parser: "@typescript-eslint/parser"
+parserOptions:
+  ecmaVersion: latest
+plugins:
+  - "@typescript-eslint"
+rules:
+  linebreak-style:
+    - error
+    - windows
+  quotes:
+    - error
+    - double
+  semi:
+    - error
+    - always
