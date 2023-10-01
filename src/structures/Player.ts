@@ -88,7 +88,7 @@ export class Player extends EventEmitter {
   }
 
   /**
-   *
+   * Play a track
    * @param options -
    * @returns {this | null}
    */
@@ -112,7 +112,7 @@ export class Player extends EventEmitter {
   }
 
   /**
-   *
+   * Stops the current track
    * @param amount -
    * @returns {this}
    */
@@ -133,7 +133,7 @@ export class Player extends EventEmitter {
   }
 
   /**
-   * Pause/Resume the current playback
+   * Pause/Resume the current track
    * @param state -
    * @returns {this}
    */
@@ -156,7 +156,7 @@ export class Player extends EventEmitter {
   }
 
   /**
-   * Seeks the current song to a certain position
+   * Seeks the current track to a certain position
    * @param position -
    * @returns {this}
    */
@@ -176,7 +176,7 @@ export class Player extends EventEmitter {
   }
 
   /**
-   * Set the volume, only for the current song
+   * Set the volume, only for the current track
    * @param volume - Volume level, by default 100
    * @returns {this}
    */
@@ -196,7 +196,7 @@ export class Player extends EventEmitter {
   }
 
   /**
-   *
+   * Enable/Disable track repeat mode
    * @param mode -
    * @returns {this}
    */
@@ -206,7 +206,7 @@ export class Player extends EventEmitter {
   }
 
   /**
-   *
+   * Enable/Disable track queue mode
    * @param mode
    * @returns {this}
    */
@@ -216,7 +216,7 @@ export class Player extends EventEmitter {
   }
 
   /**
-   *
+   * Disable track and queue repeat mode
    * @returns {this}
    */
   public removeRepeat(): this {
@@ -226,7 +226,7 @@ export class Player extends EventEmitter {
   }
 
   /**
-   * sets the player test channel manually. (where messages will be send)
+   * Sets the player test channel manually. (where messages will be send)
    * @param channel
    * @returns {this}
    */
@@ -261,6 +261,7 @@ export class Player extends EventEmitter {
     this.node.send({
       op: "voiceUpdate",
       guildId: this.guild,
+      region: "us",
       ...data,
     });
     return this;

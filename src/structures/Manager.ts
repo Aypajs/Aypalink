@@ -66,7 +66,7 @@ export class Manager extends EventEmitter {
 
   /**
    *
-   * @param options
+   * @param options -
    * @returns {Node}
    */
   public init(options: NodeOptions): Node {
@@ -106,13 +106,13 @@ export class Manager extends EventEmitter {
 
   /**
    *
-   * @param botID
+   * @param clientID -
    */
-  public start(botID?: string): void {
-    if (!botID) throw new Error("BotID must be a string");
-    if (typeof botID !== "string")
-      throw new TypeError("BotID must be a string.");
-    this.user = botID;
+  public start(clientID?: string): void {
+    if (!clientID) throw new Error("client id must be a string");
+    if (typeof clientID !== "string")
+      throw new TypeError("client id must be a string.");
+    this.user = clientID;
     this.listOfNodes?.forEach((node) =>
       this.init(node as unknown as NodeOptions)
     );
@@ -120,7 +120,7 @@ export class Manager extends EventEmitter {
 
   /**
    *
-   * @param data
+   * @param data -
    * @returns {boolean}
    */
   public voiceServersUpdate(data: { guild_id: string }): boolean {
@@ -130,7 +130,7 @@ export class Manager extends EventEmitter {
 
   /**
    *
-   * @param data
+   * @param data -
    * @returns {boolean | void}
    */
   public voiceStateUpdate(data: VoiceStateUpdate): boolean | void {
@@ -145,7 +145,7 @@ export class Manager extends EventEmitter {
   }
   /**
    *
-   * @param packet
+   * @param packet -
    * @return {void}
    */
   public packetUpdate(packet: { t: string; d: VoiceStateUpdate }): void {
@@ -155,7 +155,7 @@ export class Manager extends EventEmitter {
 
   /**
    *
-   * @param guildId
+   * @param guildId -
    * @returns {boolean}
    */
   public connectionProcess(guildId: string): boolean {
@@ -199,7 +199,7 @@ export class Manager extends EventEmitter {
 
   /**
    *
-   * @param data
+   * @param data -
    * @returns {NodeOptions | Player}
    */
   public spawnPlayer(data: VoiceChannelStruct): NodeOptions | Player {
@@ -222,8 +222,8 @@ export class Manager extends EventEmitter {
 
   /**
    *
-   * @param track
-   * @param source
+   * @param track -
+   * @param source -
    * @returns {Promise<Response>}
    */
   public async resolveTrack(track: string, source: string): Promise<Response> {
@@ -290,7 +290,7 @@ export class Manager extends EventEmitter {
 
   /**
    *
-   * @param address
+   * @param address -
    * @returns {Promise<boolean>}
    */
   public async unmarkFailedAddress(address: string): Promise<boolean> {
@@ -309,9 +309,9 @@ export class Manager extends EventEmitter {
 
   /**
    *
-   * @param node
-   * @param endpoint
-   * @param param
+   * @param node -
+   * @param endpoint -
+   * @param param -
    * @returns {Promise<T>}
    */
   public async request<T>(
@@ -388,7 +388,7 @@ export class Manager extends EventEmitter {
 
   /**
    *
-   * @param guildId
+   * @param guildId -
    * @returns {Player}
    */
   public get(guildId: string): Player {

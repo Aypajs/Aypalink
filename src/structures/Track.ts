@@ -10,6 +10,7 @@ export default class Track {
   public isStream: boolean;
   public uri: string;
   public thumbnail: string | null;
+  public requester: unknown | null;
 
   constructor(data: TrackOptions) {
     this.track = data.track;
@@ -21,5 +22,6 @@ export default class Track {
     this.isStream = data.info.isStream;
     this.uri = data.info.uri;
     this.thumbnail = `https://i.ytimg.com/vi/${data.info.identifier}/maxresdefault.jpg`;
+    this.requester;
   }
 }

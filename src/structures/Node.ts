@@ -7,19 +7,19 @@ const { name, version } = require("../../package.json");
 
 /**
  *
- * @prop { ID } id -
- * @prop { Host } host -
- * @prop { Port } port -
- * @prop { Password } password -
+ * @prop { ID } id - The node id/name for the host
+ * @prop { Host } host - The host IP to access lavalink
+ * @prop { Port } port - The port to connect
+ * @prop { Password } password - The passowrd for the node connection
  * @prop { Secure } secure -
  * @prop { RetryAmount } retryAmount -
  * @prop { RetryDelay } retryDelay -
  * @prop { ResumeKey } resumeKey -
  * @prop { ResumeTimeout } resumeTimeout -
- * @prop { Stats } stats -
- * @prop { Connected } connected -
+ * @prop { Stats } stats - The node status object
+ * @prop { Connected } connected - Checks if the player is connected
  * @prop { Retry } retry -
- * @prop { WS } ws -
+ * @prop { WS } ws - Websocket
  * @prop { PacketQueue } packetQueue -
  * @prop { Manager } manager -
  */
@@ -192,7 +192,7 @@ export class Node {
   }
 
   /**
-   * {Private}
+   * {Private} Called when an error is received from a Lavalink node34wq
    * @param code
    * @returns {void}
    */
